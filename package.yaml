@@ -1,6 +1,6 @@
-name:                my-project
+name:                escape-the-room
 version:             0.1.0.0
-github:              "iu-haskell-fall-2020/project-template"
+github:              "iu-haskell-fall-2020/escape-the-room"
 license:             BSD3
 author:              "Nikolai Kudasov"
 maintainer:          "n.kudasov@innopolis.ru"
@@ -17,7 +17,7 @@ extra-source-files:
 # To avoid duplicated efforts in documentation and dealing with the
 # complications of embedding Haddock markup inside cabal files, it is
 # common to point users to the README.md file.
-description:         Please see the README on GitHub at <https://github.com/iu-haskell-fall-2020/project-template#readme>
+description:         Please see the README on GitHub at <https://github.com/iu-haskell-fall-2020/escape-the-room#readme>
 
 custom-setup:
   dependencies:
@@ -30,12 +30,14 @@ ghc-options:
 
 dependencies:
 - base >= 4.7 && < 5
+- codeworld-api
+- text
 
 library:
   source-dirs: src
 
 executables:
-  my-project-exe:
+  escape-the-room-exe:
     main:                Main.hs
     source-dirs:         app
     ghc-options:
@@ -43,7 +45,7 @@ executables:
     - -rtsopts
     - -with-rtsopts=-N
     dependencies:
-    - my-project
+    - escape-the-room
 
 tests:
   spec:
@@ -54,7 +56,7 @@ tests:
     - -rtsopts
     - -with-rtsopts=-N
     dependencies:
-    - my-project
+    - escape-the-room
     - hspec
     - HUnit
     - QuickCheck

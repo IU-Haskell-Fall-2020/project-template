@@ -1,0 +1,96 @@
+cabal-version: 1.24
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 19eb45534e41ee7bb1eb4be3681fd8bd5ac5416af54e0dc2f27dbee0faaa7c7e
+
+name:           escape-the-room
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/iu-haskell-fall-2020/escape-the-room#readme>
+homepage:       https://github.com/iu-haskell-fall-2020/escape-the-room#readme
+bug-reports:    https://github.com/iu-haskell-fall-2020/escape-the-room/issues
+author:         Nikolai Kudasov
+maintainer:     n.kudasov@innopolis.ru
+copyright:      2020 Innopolis University
+license:        BSD3
+license-file:   LICENSE
+build-type:     Custom
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/iu-haskell-fall-2020/escape-the-room
+
+custom-setup
+  setup-depends:
+      Cabal
+    , base
+    , cabal-doctest >=1.0.2 && <1.1
+
+library
+  exposed-modules:
+      EscapeTheRoom
+      EscapeTheRoom.Levels
+  other-modules:
+      Paths_escape_the_room
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -fno-warn-type-defaults
+  build-depends:
+      base >=4.7 && <5
+    , codeworld-api
+    , text
+  default-language: Haskell2010
+
+executable escape-the-room-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_escape_the_room
+  hs-source-dirs:
+      app
+  ghc-options: -Wall -fno-warn-type-defaults -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , codeworld-api
+    , escape-the-room
+    , text
+  default-language: Haskell2010
+
+test-suite doctests
+  type: exitcode-stdio-1.0
+  main-is: doctests.hs
+  hs-source-dirs:
+      test
+  ghc-options: -Wall -fno-warn-type-defaults
+  build-depends:
+      Glob
+    , QuickCheck
+    , base
+    , codeworld-api
+    , doctest
+    , template-haskell
+    , text
+  default-language: Haskell2010
+
+test-suite spec
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      MyProjectSpec
+      Paths_escape_the_room
+  hs-source-dirs:
+      test
+  ghc-options: -Wall -fno-warn-type-defaults -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      HUnit
+    , QuickCheck
+    , base >=4.7 && <5
+    , codeworld-api
+    , escape-the-room
+    , hspec
+    , text
+  default-language: Haskell2010

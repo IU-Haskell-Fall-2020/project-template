@@ -17,7 +17,7 @@
 #
 # resolver: ./custom-snapshot.yaml
 # resolver: https://example.com/snapshots/2018-01-01.yaml
-resolver: lts-16.12
+resolver: lts-14.27
 
 # User packages to be built.
 # Various formats can be used as shown in the example below.
@@ -39,7 +39,11 @@ packages:
 # - git: https://github.com/commercialhaskell/stack.git
 #   commit: e7b331f14bcffb8367cd58fbfc8b40ec7642100a
 #
-# extra-deps: []
+extra-deps:
+- codeworld-api-0.3.1
+- blank-canvas-0.6.3@sha256:9c089fd7796e07e428f3490b3812c92fec8d3b615b12c80db7f282b5d6eeec95,7669
+- colour-2.3.4@sha256:9a8a9036652da142fb804571ffca7764addf570661c1b5ecfdef9379875d90ab,1827
+- kansas-comet-0.4@sha256:9316474b867e35576816422f71ee9983afc471dfced2f9a67fc1222349b0fee9,1737
 
 # Override default flag values for local packages and extra-deps
 # flags: {}

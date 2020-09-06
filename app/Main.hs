@@ -1,6 +1,6 @@
 module Main where
 
-import           MyProject
+import           EscapeTheRoom (run)
 
 main :: IO ()
 main = run
